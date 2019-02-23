@@ -14,7 +14,7 @@ function here(divname) {
         document.getElementById(divname),
         maptypes.normal.map,
         {
-            zoom: 16,
+            zoom: 18,
             center: { lng: -122.39649700000001, lat: 37.787485499999995 }
         }
     );             
