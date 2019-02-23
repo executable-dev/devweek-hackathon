@@ -3,3 +3,8 @@
     background: #0E0B16;
     color: #A239CA;
 }
+
+div.move-button{
+    text-align:center;
+    border: 2px solid #E7DFDD;
+}
