@@ -1,4 +1,4 @@
-(() => {
+$(() => {
     var hereApi = here('here_map');
 
     let currentLocation = hereApi.setMapLocation(-122.39649700000001, 37.787485499999995);
@@ -7,29 +7,24 @@
         currentLocation.lat += .00005;
 
         sendLocation(currentLocation.lat, currentLocation.lng);
-        //connection.send('location', {latitude:currentLocation.lat, longitude:currentLocation.lng});
-        //hereApi.setMapLocation(currentLocation.lng, currentLocation.lat);
     });
 
     $('#west_button').click(() => {
         currentLocation.lng += -.00005;
 
         sendLocation(currentLocation.lat, currentLocation.lng);
-        //hereApi.setMapLocation(currentLocation.lng, currentLocation.lat);
     });
 
     $('#east_button').click(() => {
         currentLocation.lng += .00005;
 
         sendLocation(currentLocation.lat, currentLocation.lng);
-        //hereApi.setMapLocation(currentLocation.lng, currentLocation.lat);
     });
 
     $('#south_button').click(() => {
         currentLocation.lat += -.00005;
 
         sendLocation(currentLocation.lat, currentLocation.lng);
-        //hereApi.setMapLocation(currentLocation.lng, currentLocation.lat);
     });
     
     var apiBaseUrl = 'https://devweek2019-robotservice.azurewebsites.net';
@@ -84,4 +79,9 @@
         currentLocation.lat = message.latitude;
     }
 
-})();
+    //start setting up agora
+    var agoraApi = agora('agora_video');
+
+    agoraApi.addStartButton('join_video');
+
+});

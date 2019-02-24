@@ -14,7 +14,25 @@
     <div class="container">
         <div class="row">
             <div class="col-6">
-                <h2>driving image here</h2>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div style="height:400px" id="agora_video">
+                            <h2>driving image here</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <button id="join_video">Video</button>
+                    </div>
+                    <div class="col-4">
+                        <div style="height:200px" id="local-video">
+                            <h2>local video here</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-6">
                 <div class="col-12">
@@ -50,7 +68,9 @@
         <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>        <!--Reference the SignalR library. -->
         <script src="https://cdn.jsdelivr.net/npm/@aspnet/signalr@1.0.3/dist/browser/signalr.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"></script>
+        <script src="https://cdn.agora.io/sdk/web/AgoraRTCSDK-2.5.0.js"></script>
         <script src="here.js"></script>
+        <script src="agora.js"></script>
         <script src="index.js"></script>
 </body>
 </html>
