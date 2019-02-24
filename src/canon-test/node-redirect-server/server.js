@@ -18,7 +18,7 @@ app.get("/getThumbnailLink", async (req, res) => {
     let thumbnailURL = json.url[json.url.length - 1];
 
     res.status(200).json({
-        url: thumbnailURL + "?kind=thumbnail"
+        url: thumbnailURL + "?kind=thumbnail" // REMOVE FOR FULL IMAGE
     });
 })
 
