@@ -4,27 +4,37 @@ $(() => {
     let currentLocation = hereApi.setMapLocation(-122.39649700000001, 37.787485499999995);
 
     $('#north_button').click(() => {
-        currentLocation.lat += .00005;
+        sendMoveRequest(['forward']);        
+    });
 
-        sendLocation(currentLocation.lat, currentLocation.lng);
+    $('#northwest_button').click(() => {
+        sendMoveRequest(['forward', 'left']);
+    });
+
+    $('#northeast_button').click(() => {
+        sendMoveRequest(['forward', 'right']);
     });
 
     $('#west_button').click(() => {
-        currentLocation.lng += -.00005;
-
-        sendLocation(currentLocation.lat, currentLocation.lng);
+        sendMoveRequest(['left']);
     });
 
     $('#east_button').click(() => {
-        currentLocation.lng += .00005;
-
-        sendLocation(currentLocation.lat, currentLocation.lng);
+        sendMoveRequest(['right']);
     });
 
     $('#south_button').click(() => {
-        currentLocation.lat += -.00005;
+        sendMoveRequest(['back']);
+    });
+    $('#southwest_button').click(() => {
+        sendMoveRequest(['back', 'left']);
+    });
+    $('#southeast_button').click(() => {
+        sendMoveRequest(['back', 'right']);
+    });
 
-        sendLocation(currentLocation.lat, currentLocation.lng);
+    $('#picture_button').click(() => {
+        sendPhotoRequest();
     });
     
     var apiBaseUrl = 'https://devweek2019-robotservice.azurewebsites.net';
@@ -44,7 +54,8 @@ $(() => {
             .configureLogging(signalR.LogLevel.Information)
             .build();
 
-        connection.on('newLocation', newMessage);
+        connection.on('newLocation', newLocation);
+        connection.on('newPicture', newPhoto);
         connection.onclose(() => console.log('disconnected'));
 
         console.log('connecting...');
@@ -73,10 +84,26 @@ $(() => {
         }, getAxiosConfig()).then(resp => resp.data);
     }
 
-    function newMessage(message) {
-        hereApi.setMapLocation(message.longitude, message.latitude);
+    function sendMoveRequest(directions) {
+        return axios.post(`${apiBaseUrl}/api/requestMove`, {
+            directions: directions
+        }, getAxiosConfig()).then(resp => resp.data, error => console.log(error));
+    }
+
+    function sendPhotoRequest() {
+        return axios.post(`${apiBaseUrl}/api/requestPicture`, {
+            msg: 'asdf'
+        }, getAxiosConfig()).then(resp => resp.data, error => console.log(error));
+    }
+
+    function newLocation(message) {
         currentLocation.lng = message.longitude;
         currentLocation.lat = message.latitude;
+        hereApi.setMapLocation(currentLocation.lng, currentLocation.lat);
+    }
+
+    function newPhoto(photoStream) {
+        alert(photoStream);
     }
 
     //start setting up agora

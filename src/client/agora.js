@@ -1,3 +1,5 @@
+//Code from samples at https://github.com/digitallysavvy/group-video-chat
+//Thank you Hermes for the excellent advice!
 function agora(video_div_name) {
     var appId = '9b9806a1a8a94de9b871bb7f389f27b7';
 
