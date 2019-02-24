@@ -17,7 +17,7 @@
                 <h2>driving image here</h2>
             </div>
             <div class="col-6">
-                <div class="col-12" >
+                <div class="col-12">
                     <div id="here_map" style="height: 400px"></div>
                 </div>
                 <div class="col-12">
@@ -27,27 +27,30 @@
                         <div class="invisible col-4"></div>
                     </div>
                     <div class="row  col-12">
-                            <div id="west_button" class="visible col-4  move-button"><</div>
-                            <div class="invisible col-4"></div>
-                            <div id="east_button" class="visible col-4  move-button">></div>
+                        <div id="west_button" class="visible col-4  move-button"><</div>
+                        <div class="invisible col-4"></div>
+                        <div id="east_button" class="visible col-4  move-button">></div>
                     </div>
                     <div class="row col-12">
+                        <div class="invisible col-4"></div>
+                        <div id="south_button" class="visible col-4 move-button">
+                            v</divid="up_button">
                             <div class="invisible col-4"></div>
-                            <div id="south_button" class="visible col-4 move-button">v</divid="up_button">
-                            <div class="invisible col-4"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
-    <script src="here.js"></script>
-    <script src="index.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>        <!--Reference the SignalR library. -->
+        <script src="https://cdn.jsdelivr.net/npm/@aspnet/signalr@1.0.3/dist/browser/signalr.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"></script>
+        <script src="here.js"></script>
+        <script src="index.js"></script>
 </body>
 </html>
