@@ -80,6 +80,8 @@
 
     function newMessage(message) {
         hereApi.setMapLocation(message.longitude, message.latitude);
+        currentLocation.longitude = message.longitude;
+        currentLocation.latitude = message.latitude;
     }
 
 })();
