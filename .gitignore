@@ -6,3 +6,4 @@
 /.vs/ProjectSettings.json
 /.vs/config/applicationhost.config
 .DS_Store
+node_modules
